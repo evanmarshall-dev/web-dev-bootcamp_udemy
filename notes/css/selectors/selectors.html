@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectors</title>
+    <link rel="stylesheet" href="./selectors.css" />
+  </head>
+  <body>
+    <h1>Selectors</h1>
+    <h2>Descendant Selectors</h2>
+    <p>
+      Selects all elements which are descendants of another by adding a space
+      between the parent selector and descendant in CSS.
+    </p>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </nav>
+    </header>
+    <h2>Attribute Selector</h2>
+    <p>Selecting an attribute in a form element such as text.</p>
+    <code> input[type="text"] { styles here... } </code>
+    <h2>Pseudo Classes</h2>
+    <p>
+      Keywords added to a selector which specifies a special state of the
+      selected element.
+    </p>
+    <ul>
+      For example:
+      <li>:active</li>
+      <li>:checked</li>
+      <li>:first</li>
+      <li>:first-child</li>
+      <li>:hover</li>
+      <li>:not()</li>
+      <li>:nth-child()</li>
+      <li>:nth-of-type()</li>
+    </ul>
+    <h2>Pseudo Elements</h2>
+    <p>
+      Keywords added to a selector which lets you style a particular part of the
+      selected element.
+    </p>
+    <ul>
+      For example:
+      <li>::after</li>
+      <li>::before</li>
+      <li>::first-letter</li>
+      <li>::first-line</li>
+      <li>::selection</li>
+    </ul>
+  </body>
+</html>

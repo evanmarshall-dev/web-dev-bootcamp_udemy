@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <!-- Forms are containers for inputs. They also define where the data from the form will be sent. -->
+    <h1>Forms Demo</h1>
+
+    <hr />
+
+    <!-- Action specifies where the data should be sent when submitted. This creates an HTTP request where the action determines the endpoint. -->
+    <section>
+      <h2>Input Examples Form</h2>
+      <form action="/tacos" target="_blank">
+        <p class="username">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            placeholder="username"
+            id="username"
+            name="username"
+          />
+        </p>
+        <p class="password">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            placeholder="password"
+            id="password"
+            name="password"
+          />
+        </p>
+        <p class="color">
+          <label for="color">Color</label>
+          <input type="color" placeholder="color" id="color" name="color" />
+        </p>
+        <!-- The name attribute is a label sent to the server via HTTP request  when the form is submitted. -->
+        <p class="number">
+          <label for="number">Number</label>
+          <input type="number" placeholder="number" id="number" name="number" />
+        </p>
+        <!-- Any buttons put in the form with automatically submit the form based on the action attribute. This can be prevented by adding the "type" attribute. -->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </section>
+
+    <hr />
+
+    <!-- Reddit search query form -->
+    <section>
+      <h2>Reddit Search Example Form</h2>
+      <form action="https://www.reddit.com/search/" target="_blank">
+        <label for="q">Reddit Search</label>
+        <input type="text" name="q" id="q" />
+        <button type="submit">Search Reddit</button>
+      </form>
+    </section>
+
+    <hr />
+
+    <!-- Google search query form -->
+    <section>
+      <h2>Google Search Example Form</h2>
+      <form action="https://www.google.ca/search" target="_blank">
+        <label for="q">Google Search</label>
+        <input type="text" name="q" id="q" />
+        <button type="submit">Search Google</button>
+      </form>
+    </section>
+
+    <hr />
+
+    <!-- YouTube search query form -->
+    <!-- Search inputs do not require submit button -->
+    <section>
+      <h2>YouTube Search Example Form</h2>
+      <form action="https://www.youtube.com/results" target="_blank">
+        <label for="search_query">YouTube Search</label>
+        <input type="text" name="search_query" id="search_query" />
+        <!-- <button type="submit">Search YouTube</button> -->
+      </form>
+    </section>
+
+    <hr />
+
+    <!-- Checkbox Example -->
+    <section>
+      <h2>Checkbox Example</h2>
+      <form action="/checkbox" target="_blank">
+        <p class="checkbox">
+          <!-- You can have a checkbox pre-selected -->
+          <input type="checkbox" name="checkbox1" id="checkbox1" checked />
+          <label for="checkbox1">Checkbox 1</label>
+        </p>
+        <p class="checkbox">
+          <input type="checkbox" name="checkbox2" id="checkbox2" />
+          <label for="checkbox2">Checkbox 2</label>
+        </p>
+      </form>
+    </section>
+
+    <hr />
+
+    <!-- Radio Example -->
+    <!-- Associate radio buttons by giving the same name to each -->
+    <!-- Have to add the "value" attribute in order to pass in the radio button selected to the HTTP request -->
+    <section>
+      <h2>Checkbox Example</h2>
+      <form action="/radio" target="_blank">
+        <p class="radio">
+          <input type="radio" name="radio" id="radio1" value="radio1" />
+          <label for="radio1">Radio 1</label>
+        </p>
+        <p class="radio">
+          <!-- You can have a radio button pre-selected -->
+          <input type="radio" name="radio" id="radio2" value="radio2" checked />
+          <label for="radio2">Radio 2</label>
+        </p>
+        <p class="radio">
+          <input type="radio" name="radio" id="radio3" value="radio3" />
+          <label for="radio3">Radio 3</label>
+        </p>
+        <p class="submit">
+          <button type="submit">Submit</button>
+        </p>
+      </form>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Selection & Text Area Example</h2>
+      <form action="/selection" target="_blank">
+        <p>
+          <label for="pet-select">Choose a Pet:</label>
+          <select name="pet-select" id="pet-select">
+            <!-- First option is usually just a blank value placeholder -->
+            <option value="">Please choose an option</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster">Hamster</option>
+            <!-- You can also have an option pre-selected -->
+            <option value="parrot" selected>Parrot</option>
+          </select>
+        </p>
+        <p>
+          <label for="message">Leave us a message</label>
+          <br />
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Leave us a message"
+          ></textarea>
+        </p>
+        <p class="submit">
+          <button type="submit">Submit</button>
+        </p>
+      </form>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Validation Demo</h2>
+      <!-- You can also have a min and/or max validation on a number input for example -->
+      <form action="/valid" target="_blank">
+        <p>
+          <!-- validate on empty input -->
+          <label for="first">First Name</label>
+          <input type="text" name="first" id="first" required />
+        </p>
+        <p>
+          <!-- validate on min/max length as well as empty input -->
+          <label for="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            minlength="5"
+            maxlength="20"
+            required
+          />
+        </p>
+        <!-- Some inputs have formatting validation built in and others you can create regular expression (regex) to accomplish this -->
+        <!-- Email is an example of built in format validation -->
+        <!-- URL is another example -->
+        <!-- Telephone is another example -->
+        <p>
+          <label for="personal">Email</label>
+          <input type="email" name="personal" id="personal" required />
+        </p>
+        <p>
+          <label for="website">Website</label>
+          <input type="url" name="website" id="website" required />
+        </p>
+        <p>
+          <button type="submit">Submit</button>
+          <button type="reset">Clear</button>
+        </p>
+      </form>
+    </section>
+
+    <hr />
+  </body>
+</html>

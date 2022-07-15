@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+  </head>
+  <body>
+    <h1>Table Example</h1>
+    <h2>Version 1</h2>
+    <table>
+      <!-- td is a table cell. -->
+      <!-- tr groups together td into a row -->
+      <!-- th defines the headers of the table -->
+      <thead>
+        <tr>
+          <th>Bird Name</th>
+          <th>Bird Weight</th>
+          <th>Bird Flight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ostrich</td>
+          <td>240</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Emu</td>
+          <td>300</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Version 2</h2>
+    <!-- Testing colspan and rowspan. -->
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Bird Name</th>
+          <th colspan="2">Bird Weight</th>
+          <th rowspan="2">Bird Flight</th>
+        </tr>
+        <tr>
+          <th>LB</th>
+          <th>KG</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ostrich</td>
+          <td>240</td>
+          <td>500</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Emu</td>
+          <td>300</td>
+          <td>600</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+/*? FLEXBOX ?*/
+/* The first property to be used in flexbox is display:flex. */
+/* There are two axis with flexbox. Main, by default, goes left to right and the cross axis. */
+/* Flex-direction has a default property of "row." There is a "row-reverse" which changes the direction of the main access to right to left. There is also "column" and "column-reverse" which functions similar to row, but changes the main axis to vertical. */
+/* Flexbox elements will squish to fit the parent container up until their assigned size. */
+/* Justify-content default property is flex-start defaults to left to right as long as flex-direction is at default. Flex-end moves the content to the right so end of container. The rest are self-explanatory. Space between takes any extra space and evenly distributes it in the center of the elements therefore there is no space on the right and left. Space-around distributes extra space evenly on each side of each element. Space-around ends up with half the space in the middle of each element due to space being added on left and right. To fix this problem with space-around you could use space-evenly. */
+/* Justify-content can be either horizontal or vertical depending on which direction the main axis is. */
+/* Flex-wrap determines if elements will wrap onto a new line if main axis is horizontal or if elements will wrap onto a new column if main axis is vertical. The default property is "wrap." Other properties are wrap-reverse and no-wrap. The wrap happens along the cross-axis therefore wrap-reverse changes the direction of the cross-axis. */
+/* Align-items distributes space, much like justify content, however it is space along the cross axis. The default property is also flex-start. You can also use property "baseline" which will align your elements based on the text baseline. */
+/* Align-content is use to distribute content along the cross axis but only when we have several rows or columns and wrap or wrap-reverse. */
+/* Align-self is applied to an individual element an not the actual flex container as all the above. it will align the element along the cross-axis. */
+/* Flex-basis is the width that will be used when elements are in a row. It is the initial height or width (depends on flex-direction) of the elements when in a flexbox */
+/* Flex-grow takes up any additional space in the flexbox. This will evenly take up the remaining space when applied to multiple elements. You can apply min and max width to control how much the elements grow or shrink. You can set one to 2 and the other to 1 and they will grow in portion with the 2 taking up twice the space. */
+/* Flex-shrink controls the opposite of flex-grow and controls how elements shrink. */
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+#container {
+  background-color: #003049;
+  width: 90%;
+  /* height: 500px; */
+  margin: 0 auto;
+  border: 5px solid #003049;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#container div {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  flex-basis: 200px;
+  flex-grow: 1;
+}
+
+/* div:nth-of-type(1) {
+  flex-grow: 1;
+}
+div:nth-of-type(5) {
+  flex-grow: 1;
+} */
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  border: 5px solid #000;
+  height: 500px;
+  display: flex;
+}
+
+main .sidebar {
+  background-color: #6930c3;
+  /* Just one value for flex defaults to flex-grow. */
+  /* Two values with one containing a unit of measurement will default to flex-grow and flex-basis. */
+  /* Three values and the second value is flex-shrink. */
+  flex: 1 2 300px;
+  /* border: 2px solid #fff; */
+}
+
+main .main-content {
+  background-color: #80ffdb;
+  flex: 2 800px;
+}

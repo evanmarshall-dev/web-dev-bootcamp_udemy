@@ -1,0 +1,167 @@
+div {
+  width: 200px;
+  height: 200px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+/* With a regular box sizing the border will add to the element's width and height. */
+/* With box sizing as border box the width of the element will go from border to border. */
+#div1 {
+  background-color: bisque;
+  border: 5px solid #000;
+  /* box-sizing: border-box; */
+}
+
+#div2 {
+  background-color: cadetblue;
+  border: 3px dashed #c6c6c6;
+  border-left-width: 8px;
+  /* Using percentage it calculates width and height percentage */
+  /* 50% makes a circle */
+  /* You can even specify one or several corners. */
+  border-radius: 50%;
+}
+
+#div3 {
+  background-color: dimgray;
+  border: 4px solid blue;
+  border-left-width: 8px;
+}
+
+/* Headers are inherently block level elements */
+/* You can change this behavior with the display property */
+/*? Block elements width, height, margin and padding are all respected ?*/
+#display h3 {
+  background-color: slateblue;
+  border: 1px solid #000;
+  color: #fff;
+  height: 100px;
+  width: 100px;
+  padding: 25px;
+  margin: 25px;
+  /* display: inline; */
+}
+
+/*? Inline elements width and height are ignored. Padding/margin is not ignore however it has no impact on surrounding vertical elements. It only impacts elements on the same line. ?*/
+/* Spans are inherently inline elements */
+span {
+  background-color: palevioletred;
+  border: 1px solid #000;
+  height: 500px;
+  width: 500px;
+  padding: 25px;
+  margin: 25px;
+  /* display: block; */
+}
+
+/* Divs are block level */
+/*? If you want them to be inline but have width, height, margin and padding respected you would use "inline-block" ?*/
+.display-div {
+  width: 200px;
+  height: 200px;
+  background-color: olivedrab;
+  color: #fff;
+  border: 5px solid #000;
+  display: inline-block;
+  padding: 25px;
+  margin: 25px;
+}
+
+/*? Units ?*/
+/* Percentages */
+#units {
+  background-color: antiquewhite;
+  width: 800px;
+  height: 800px;
+}
+
+/* Using percentages the properties will be a percentage of their parent's properties. They are relative units. */
+#units__div {
+  background-color: #c6c6c6;
+  width: 50%;
+  height: 50%;
+}
+
+/* Sometimes the percentages have nothing to do with parent but everything to do with the element's properties, such as font size */
+#units__header {
+  width: 400px;
+  border: 1px solid #000;
+  display: block;
+  line-height: 200%;
+}
+
+/*? Ems are also a relative property, but they can change with a change in the parent properties. For example, if the parent element is one size and you make child 2em then it will be two times the size of parent. ?*/
+/* Ems do not work well with nested elements due to stacking therefore rems are better in this scenario. Rems are relative to the full html document's size. */
+
+/*? Opacity affects all elements inside it versus rgba will only affect the element styled with it. ?*/
+/* HEX colours also allow for alpha values. */
+#test {
+  width: 600px;
+  height: 600px;
+  background-color: blanchedalmond;
+}
+
+#rgba {
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#opacity {
+  width: 50%;
+  height: 50%;
+  background-color: blueviolet;
+  opacity: 0.5;
+}
+
+/* Position */
+/* Static positioning is the default for browsers. */
+#static div,
+#relative div,
+#absolute div {
+  width: 100px;
+  height: 100px;
+  background-color: cadetblue;
+  border: 2px solid #000;
+  margin: 10px;
+  display: inline-block;
+}
+
+#static #middle {
+  background-color: aliceblue;
+  position: static;
+  top: 100px;
+}
+
+/* Relative positioning changes the element relative to where it was. */
+#relative #relative__middle {
+  background-color: aliceblue;
+  position: relative;
+  top: 100px;
+  /* left positioning is "from" the left so moves it right. */
+  left: 100px;
+}
+
+/* Absolute removes element from document flow and doesn't take up space in the document. */
+/* It is then placed closest to is nearest relative ancestor and if there isn't one it is placed closest to its containing element (usually the body) */
+#absolute #absolute__middle {
+  background-color: aliceblue;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+/* Fixed positioning works similar to absolute in that it is removed from normal document flow however it stays fixed to that position even on scroll. */
+/* Sticky stays in its static position until it reaches the top of the document then it works like fixed. */
+
+/*? Transitions will allow you to set 4 properties similar to border styling. Delay, curve, timing and the element you are transitioning. It is good practice to specify the element you are transitioning even though it is not required. You are controlling how an element transitions from one state to the next using transitions ?*/
+
+/*? Transforms actually change the state of the element versus transitions which are how the element changes state. Transforms allow different properties as well. They are the transform type and origin and you can combine transforms in one style. Transform also applies to all child elements of the element you are styling. ?*/
+
+/* Calc example */
+img {
+  margin: calc(10% / 6);
+}

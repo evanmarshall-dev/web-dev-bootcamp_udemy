@@ -1,0 +1,58 @@
+/*** Direct Descendant Selectors ***/
+/* This targets all anchor tags which are descendants of an li. */
+li a {
+  color: thistle;
+}
+
+/* Direct descendant so below selecting only li which are direct descendants of a div. They are the direct child or one line down. */
+div > li {
+  color: white;
+}
+
+/*** Adjacent Selectors ***/
+/* Selects only the paragraphs that are immediately preceded by an h1. They are adjacent. They are not descendants. */
+h1 + p {
+  color: red;
+}
+
+/* The following selects all sections with class of post */
+section.post {
+  background-color: blue;
+}
+
+/*** Attribute Selectors ***/
+/*? See: https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors for more details ?*/
+/* All anchor elements with an href containing "example" */
+a[href*="example"] {
+  font-size: 2rem;
+}
+
+/* All anchor elements with an href ending in ".org" */
+a[href$=".org"] {
+  font-style: italic;
+}
+
+/* All anchor elements with a class attribute containing the word "logo" */
+a[class~="logo"] {
+  padding: 2px;
+}
+
+/*** Pseudo Classes ***/
+/*? See: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes for more details ?*/
+/* Select every 3rd of a class type */
+/* If you put just a number 3 it will only select the third of that type, but if you put in number 3 followed by "n" then it will get every third of that type. */
+.post:nth-of-type(3n) {
+  background-color: beige;
+}
+
+/*** Pseudo Elements ***/
+/*? See: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements for more details ?*/
+/* First letter of every h2 on page */
+h2::first-letter {
+  font-size: 3rem;
+}
+
+/* Can control the style of a selection, for example all selection color of a page */
+::selection {
+  background-color: red;
+}
